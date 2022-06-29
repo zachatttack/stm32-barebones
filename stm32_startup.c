@@ -68,7 +68,7 @@ void Reset_Handler(void)
       *pDst++ = *pSrc++;
     }
 
-    size = &_ebss - &_sbss;
+    size = (uint32_t)&_ebss - (uint32_t)&_sbss;
     pDst = (uint8_t*)&_sbss;
     for(uint32_t i=0; i < size ; i++){
       *pDst++ = 0;
